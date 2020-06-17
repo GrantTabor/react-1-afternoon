@@ -859,7 +859,6 @@ export default class FilterObject extends Component {
           title: 'CEO',
         }
       ],
-
       userInput: '',
       filteredEmployees: []
     }
@@ -1011,7 +1010,7 @@ Finally, let's update our `button` element to handle filtering our names array.
 
 ```js
   filterNames(userInput) {
-
+    
   }
 
   render() {
