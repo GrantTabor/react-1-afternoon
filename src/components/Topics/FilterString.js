@@ -9,11 +9,7 @@ class FilterString extends Component{
             filteredArray: []
         }
     }
-    handleInput = (event) =>{
-        this.setState({
-            userInput: event
-        })
-    }
+
 
     filterStrings(prop) {
         let names = this.state.unFilteredString;
@@ -33,7 +29,7 @@ class FilterString extends Component{
           <div className="puzzleBox filterStringPB">
             <h4> Filter String </h4>
             <span className="puzzleText">Unfiltered: { JSON.stringify(this.state.unFilteredString, null, 10) }</span>
-            <input className="inputLine" onChange={(event) => this.handleInput(event)}/>
+            <input className="inputLine" onChange={(event) => this.setState({userInput: event.target.value})}/>
             <button className="confirmationButton" onClick={() => this.filterStrings(this.state.userInput)}> Filter </button>
             <span className="resultsBox filterStringRB">Filtered: { JSON.stringify(this.state.filteredArray, null, 10) }</span>
           </div>

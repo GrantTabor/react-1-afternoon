@@ -24,11 +24,7 @@ class FilterObject extends Component {
             filteredArray: []
         }
     }
-    handleInput = (event) =>{
-        this.setState({
-            userInput: event
-        })
-    }
+
     filterObjects = (prop) =>{
         let array = this.state.unFilteredArray;
         let filteredArray = [];
@@ -51,7 +47,7 @@ class FilterObject extends Component {
           <div className="puzzleBox filterObjectPB">
             <h4> Filter Object </h4>
             <span className="puzzleText">Original: { JSON.stringify(this.state.unFilteredArray, null, 10) }</span>
-            <input className="inputLine" onChange={(event) => this.handleInput(event.target.value)}/>
+            <input className="inputLine" onChange={(event) => this.setState({userInput: event.target.value})}/>
             <button className="confirmationButton" onClick={ () => { this.filterObjects(this.state.userInput)}}> Filter </button>
             <span className="resultsBox filterObjectRB">Filtered: { JSON.stringify(this.state.filteredArray, null, 10) }</span>
           </div>
